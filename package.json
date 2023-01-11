@@ -1,0 +1,44 @@
+{
+  "name": "sos-troop-calculator",
+  "version": "1.0.0",
+  "description": "Calculates the distribution of troops for a given formation and given the maximum marching capacity",
+  "type": "module",
+  "exports": "./src/index.js",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rimraf dist && babel src --out-dir dist  --copy-files",
+    "register": "babel-node ./src/deploy.commands.js",
+    "start": "npm run register --trace-warnings && babel-node --trace-warnings ./src/index.js",
+    "start:dev": "nodemon --exec npm run start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twicemind/sos-troop-calculator.git"
+  },
+  "license": "UNLICENCED",
+  "bugs": {
+    "url": "https://github.com/twicemind/sos-troop-calculator/issues"
+  },
+  "homepage": "https://github.com/twicemind/sos-troop-calculator#readme",
+  "dependencies": {
+    "chokidar": "^3.5.3",
+    "discord.js": "^14.7.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.20.7",
+    "@babel/core": "^7.20.7",
+    "@babel/node": "^7.20.7",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
+    "@babel/plugin-syntax-import-assertions": "^7.20.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.20.11",
+    "@babel/preset-env": "^7.20.2",
+    "eslint": "^8.30.0",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.8.1",
+    "rimraf": "^3.0.2"
+  }
+}
